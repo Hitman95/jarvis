@@ -1,18 +1,17 @@
 {
 	"apps": [{
-		"name": "hubot",
+		"name": "jarvis",
 		"max_memory_restart": "1024M",
 		"log_date_format": "YYYY-MM-DD HH:mm:ss SSS",
 		"script": "bin/hubot",
 		"exec_interpreter": "bash",
-		"args": "--name hubot --adapter slack",
+		"args": "--name jarvis --adapter slack",
 		"watch": ["package.json", "external-scripts.json", "scripts/", "hubot-scripts.json"],
 		"out_file": "/var/log/hubot/app.log",
 		"error_file": "/var/log/hubot/err.log",
 		"port": "8079",
 		"env": {
-                        "HUBOT_SLACK_TOKEN": " "
-                        "PORT": "8079"
+                        "HUBOT_SLACK_TOKEN": ""
 		}
 	}]
 }

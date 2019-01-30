@@ -1,0 +1,21 @@
+---
+- name: Deploy hubot
+  hosts: all
+  vars:
+    ansistrano_deploy_from: "{{ playbook_dir }}/../"
+    ansistrano_deploy_to: "/srv/jarvis"
+    ansistrano_version_dir: "releases"    
+    ansistrano_current_dir: "current" 
+    ansistrano_keep_releases: 3
+    ansistrano_current_via: "symlink"
+    ansistrano_deploy_via: "rsync"
+
+    ansistrano_allow_anonymous_stats: false
+
+    ansistrano_after_symlink_tasks_file: "{{ playbook_dir }}/after-symlink-tasks.yml"
+
+    ansistrano_shared_files: "pm2.production.json"
+
+  roles:
+    - { role: ansistrano.deploy }
+

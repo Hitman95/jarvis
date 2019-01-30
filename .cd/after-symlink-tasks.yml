@@ -1,0 +1,14 @@
+---
+- name: Stop pm2 
+  shell: . ~/.nvm/nvm.sh && pm2 delete jarvis
+  args:
+   executable: /bin/bash
+   chdir: "{{ ansistrano_deploy_to }}/current/"
+
+- name: Start pm2   
+  shell: . ~/.nvm/nvm.sh && pm2 start "{{ ansistrano_deploy_to }}/current/pm2.production.json"
+  args:
+   executable: /bin/bash
+   chdir: "{{ ansistrano_deploy_to }}/current/"
+
+
