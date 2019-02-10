@@ -8,14 +8,14 @@ jobs:
     - checkout
     - run:
        name: Install ansible
-       command: 'apt-get update -y && \
-                 apt-get install software-properties-common -y && \
-                 apt-add-repository --yes --update ppa:ansible/ansible && \ 
-                 apt-get install ansible -y'
+       command: 'sudo apt-get update -y && \
+                 sudo apt-get install software-properties-common -y && \
+                 sudo apt-add-repository --yes --update ppa:ansible/ansible && \ 
+                 sudo apt-get install ansible -y'
 
     - run:
        name: Install Ansistrano
-       command: 'ansible-galaxy install ansistrano.deploy ansistrano.rollback'
+       command: 'sudo ansible-galaxy install ansistrano.deploy ansistrano.rollback'
     - run:
        name: deploy jarvis
        command: 'ansible-playbook -i .cd/hosts .cd/deploy.yml'
