@@ -3,12 +3,15 @@ version: 2
 jobs:
  build:
   docker:
-    - image: circleci/node-bionic
+    - image: circleci/node
   steps:
     - checkout
     - run:
        name: Install ansible
-       command: 'sudo apt-get update -y && sudo apt-get install software-properties-common -y && sudo apt-add-repository --yes --update ppa:ansible/ansible && apt-get install ansible -y'
+       command: 'apt-get update -y && \
+                 apt-get install software-properties-common -y && \
+                 apt-add-repository --yes --update ppa:ansible/ansible && \ 
+                 apt-get install ansible -y'
 
     - run:
        name: Install Ansistrano
