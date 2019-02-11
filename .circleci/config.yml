@@ -11,4 +11,4 @@ jobs:
     - run: sudo apt-get update -y
     - run: sudo apt-get install ansible -y
     - run: sudo ansible-galaxy install ansistrano.deploy ansistrano.rollback
-    - run: ansible-playbook -i .cd/hosts .cd/deploy.yml
+    - run: sudo ansible-playbook -i .cd/hosts .cd/deploy.yml
