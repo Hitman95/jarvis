@@ -8,9 +8,9 @@ jobs:
     - checkout
     - run:
        name: Install ansible
-       command: echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" | sudo tee /etc/apt/sources.list.d/ansible-ubuntu-ansible-trusty.list \
+       command: echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" | sudo tee /etc/apt/sources.list.d/ansible-ubuntu-ansible-trusty.list\
                  && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367\
-                 && sudo apt-get update -y \
+                 && sudo apt-get update\
                  && sudo apt-get install ansible -y
 
     - run:
