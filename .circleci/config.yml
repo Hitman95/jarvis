@@ -17,6 +17,6 @@ jobs:
     - run:  echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" | sudo tee /etc/apt/sources.list.d/ansible-ubuntu-ansible-trusty.list
     - run: sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367 
     - run: sudo apt-get update -y
-    - run: sudo apt-get install ansible -y
+    - run: sudo apt-get install ansible rsync -y
     - run: ansible-galaxy install ansistrano.deploy ansistrano.rollback
     - run: ansible-playbook -i .cd/hosts .cd/deploy.yml
