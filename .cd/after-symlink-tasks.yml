@@ -4,6 +4,8 @@
   args:
    executable: /bin/bash
    chdir: "{{ ansistrano_deploy_to }}/current/"
+  failed_when: false
+  changed_when: false
 
 - name: Start pm2   
   shell: . ~/.nvm/nvm.sh && pm2 start "{{ ansistrano_deploy_to }}/current/pm2.production.json"
